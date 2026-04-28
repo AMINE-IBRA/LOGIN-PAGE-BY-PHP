@@ -40,15 +40,18 @@
             background-color: #45a049;
         }
     </style>
-
 </head>
 <body>
+    <nav style="background:#333;padding:10px 0 10px 0;margin-bottom:30px;">
+        <a href="inscription.php" style="color:white;text-decoration:none;margin:0 20px;font-weight:bold;">Inscription</a>
+        <a href="viewpersonne.php" style="color:white;text-decoration:none;margin:0 20px;font-weight:bold;">Voir les membres</a>
+    </nav>
     <form method="post" action="actionInscription.php" enctype="multipart/form-data">
         <fieldset>
             <legend>Inscription</legend>
-            <input type="text" name="nom" placeholder="Votre nom" value="" required><br>
-            <input type="text" name="prenom" placeholder="Votre prénom" value="" required><br>
-            <input type="text" name="login" placeholder="Votre login" value="" required><br>
+            <input type="text" name="nom" placeholder="Votre nom" required><br>
+            <input type="text" name="prenom" placeholder="Votre prénom" required><br>
+            <input type="text" name="login" placeholder="Votre login" required><br>
             <input type="password" name="psw" placeholder="Mot de passe" required><br>
             <input type="password" name="cpsw" placeholder="Confirmer le mot de passe" required><br>
             <input type="file" name="photo" accept="image/*" required><br>
@@ -70,6 +73,9 @@
                 break;
             case 4:
                 echo "✗ Merci de renseigner tous les champs!";
+                break;
+            case 5:
+                echo "✗ Ce login existe déjà! Utilisez un autre email.";
                 break;
         }
     }
